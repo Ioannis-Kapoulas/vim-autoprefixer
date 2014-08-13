@@ -1,7 +1,4 @@
-Prefixmycss
-===========
-
------------
+# Prefixmycss
 
 Adds [autoprefixer](https://github.com/ai/autoprefixer) support to [Vim](http://www.vim.org/).
 
@@ -16,7 +13,7 @@ Prefixmycss plugin works in normal and visual vim mode. Select a block of CSS co
 
 Note that Prefixmycss interact with the user and promt for Autoprefixer options, if you don’t set any option and hit Enter Prefixmycss continue with Autoprefixer default settings.
 
-------------
+
 </br>
 Installation
 ------------
