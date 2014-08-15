@@ -1,4 +1,4 @@
-# vim-aytoprefixer
+# vim-autoprefixer
 
 Adds [autoprefixer](https://github.com/ai/autoprefixer) support to [Vim](http://www.vim.org/).
 
@@ -7,18 +7,18 @@ Copyright (c) 2014 Ioannis Kapoulas
 About
 -----
 
-With vim-aytoprefixer you can use the power of Autoprefixer without leaving vim. Write your CSS and add vendor prefixes automatically using values from [Can I Use](http://caniuse.com/). Autoprefixer utilizes the most recent data from Can I Use to add only necessary vendor prefixes. It also removes old, unnecessary prefixes from your CSS.
+With vim-autoprefixer you can use the power of Autoprefixer without leaving vim. Write your CSS and add vendor prefixes automatically using values from [Can I Use](http://caniuse.com/). Autoprefixer utilizes the most recent data from Can I Use to add only necessary vendor prefixes. It also removes old, unnecessary prefixes from your CSS.
 
-vim-aytoprefixer plugin works in normal and visual vim mode. Select a block of CSS code in visual mode hit F7 and aply prefixes on it, in normal mode the plugin processes the entire file.
+vim-autoprefixer plugin works in normal and visual vim mode. Select a block of CSS code in visual mode hit F7 and aply prefixes on it, in normal mode the plugin processes the entire file.
 
-Note that vim-aytoprefixer interact with the user and promt for Autoprefixer options, if you don’t set any option and hit Enter vim-aytoprefixer continue with Autoprefixer default settings.
+Note that vim-autoprefixer interact with the user and promt for Autoprefixer options, if you don’t set any option and hit Enter vim-aytoprefixer continue with Autoprefixer default settings.
 
 
 </br>
 Installation
 ------------
 
-vim-aytoprefixer requires `node.js` and `npm` utility. If you have `node.js` intalled in your system skip the **step 1**.
+vim-autoprefixer requires `node.js` and `npm` utility. If you have `node.js` intalled in your system skip the **step 1**.
 
 </br>
 **STEP 1** -->`Node.js` installation
@@ -79,8 +79,8 @@ sudo apt-get install nodejs-legacy
 You can install the plugin manually just extract the zip file and place the content files in your .vim subfolders.
 
 
-Place in ~/.vim/plugin/`vim-aytoprefixer.vim`</br>
-and in ~/.vim/doc/`vim-aytoprefixer.txt`
+Place in ~/.vim/plugin/`vim-autoprefixer.vim`</br>
+and in ~/.vim/doc/`vim-autoprefixer.txt`
 
  Or you can install it with [Vundle](http://github.com/gmarik/vundle) or [Pathogen](https://github.com/tpope/vim-pathogen)
 
