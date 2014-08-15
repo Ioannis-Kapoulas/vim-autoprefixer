@@ -129,6 +129,13 @@ Alternative in step -3- you can set some options:
 ```bash
 Add vendor prefixes to CSS rules
 Hit ENTER or you can add Autoprefixes CLI Options
+Enter options :-b "last 2 versions, > 1%" 
+```
+or:
+
+```bash
+Add vendor prefixes to CSS rules
+Hit ENTER or you can add Autoprefixes CLI Options
 Enter options :-b "last 11 versions"
 ```
 Your CSS code now prefixed like this:
@@ -183,7 +190,7 @@ ToDo
 ----
 
 - [ ] Vim Helpfile
-- [ ] Supporting more Autoprefixer options
+- [+] Supporting more Autoprefixer options
 
 License
 -------
