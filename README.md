@@ -1,4 +1,4 @@
-# Prefixmycss
+# vim-aytoprefixer
 
 Adds [autoprefixer](https://github.com/ai/autoprefixer) support to [Vim](http://www.vim.org/).
 
@@ -7,18 +7,18 @@ Copyright (c) 2014 Ioannis Kapoulas
 About
 -----
 
-With Prefixmycss you can use the power of Autoprefixer without leaving vim. Write your CSS and add vendor prefixes automatically using values from [Can I Use](http://caniuse.com/). Autoprefixer utilizes the most recent data from Can I Use to add only necessary vendor prefixes. It also removes old, unnecessary prefixes from your CSS.
+With vim-aytoprefixer you can use the power of Autoprefixer without leaving vim. Write your CSS and add vendor prefixes automatically using values from [Can I Use](http://caniuse.com/). Autoprefixer utilizes the most recent data from Can I Use to add only necessary vendor prefixes. It also removes old, unnecessary prefixes from your CSS.
 
-Prefixmycss plugin works in normal and visual vim mode. Select a block of CSS code in visual mode hit F7 and aply prefixes on it, in normal mode the plugin processes the entire file.
+vim-aytoprefixer plugin works in normal and visual vim mode. Select a block of CSS code in visual mode hit F7 and aply prefixes on it, in normal mode the plugin processes the entire file.
 
-Note that Prefixmycss interact with the user and promt for Autoprefixer options, if you don’t set any option and hit Enter Prefixmycss continue with Autoprefixer default settings.
+Note that vim-aytoprefixer interact with the user and promt for Autoprefixer options, if you don’t set any option and hit Enter vim-aytoprefixer continue with Autoprefixer default settings.
 
 
 </br>
 Installation
 ------------
 
-Prefixmycss requires `node.js` and `npm` utility. If you have `node.js` intalled in your system skip the **step 1**.
+vim-aytoprefixer requires `node.js` and `npm` utility. If you have `node.js` intalled in your system skip the **step 1**.
 
 </br>
 **STEP 1** -->`Node.js` installation
@@ -74,13 +74,13 @@ On **Ubuntu** if you get errors try:
 sudo apt-get install nodejs-legacy
 ```
 </br></br>
-**STEP 3** -->`prefixmycss.vim` installation
+**STEP 3** -->`vim-aytoprefixer.vim` installation
 
 You can install the plugin manually just extract the zip file and place the content files in your .vim subfolders.
 
 
-Place in ~/.vim/plugin/`prefixmycss.vim`</br>
-and in ~/.vim/doc/`prefixmycss.txt`
+Place in ~/.vim/plugin/`vim-aytoprefixer.vim`</br>
+and in ~/.vim/doc/`vim-aytoprefixer.txt`
 
  Or you can install it with [Vundle](http://github.com/gmarik/vundle) or [Pathogen](https://github.com/tpope/vim-pathogen)
 
@@ -195,4 +195,4 @@ ToDo
 License
 -------
 
-#### The [MIT](https://github.com/Ioannis-Kapoulas/prefixmycss/blob/master/LICENSE) License (MIT)
+#### The [MIT](https://github.com/Ioannis-Kapoulas/vim-autoprefixer/blob/master/LICENSE) License (MIT)
