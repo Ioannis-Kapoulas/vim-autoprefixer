@@ -190,7 +190,7 @@ ToDo
 ----
 
 - [ ] Vim Helpfile
-- [+] Supporting more Autoprefixer options
+- [x] Supporting more Autoprefixer options
 
 License
 -------
