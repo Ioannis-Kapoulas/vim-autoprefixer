@@ -189,7 +189,7 @@ a {
 ToDo
 ----
 
-- [ ] Vim Helpfile
+- [x] Vim Helpfile
 - [x] Supporting more Autoprefixer options
 
 License
