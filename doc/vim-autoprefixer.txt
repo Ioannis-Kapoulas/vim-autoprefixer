@@ -1,0 +1,244 @@
+*vim-autoprefixer.txt* Adds autoprefixer support to Vim
+*vim-autoprefixer*
+
+                                    _                                          ~
+                             /\   /(_)_ __ ___                                 ~
+                             \ \ / / | '_ ` _ \                                ~
+                              \ V /| | | | | | |                               ~
+                               \_/ |_|_| |_| |_|                               ~
+                                                                               ~
+               _         _                        __ _                         ~
+              /_\  _   _| |_ ___  _ __  _ __ ___ / _(_)_  _____ _ __           ~
+             //_\\| | | | __/ _ \| '_ \| '__/ _ \ |_| \ \/ / _ \ '__|          ~
+            /  _  \ |_| | || (_) | |_) | | |  __/  _| |>  <  __/ |             ~
+            \_/ \_/\__,_|\__\___/| .__/|_|  \___|_| |_/_/\_\___|_|             ~
+                                 |_|                                           ~
+
+                   ---Copyright (c) 2014 Ioannis Kapoulas---                   ~
+                                    LICENSE:                                   ~
+                             The MIT License (MIT)                             ~
+
+
+                               Reference Manual~
+
+================================================================================
+CONTENTS                                             *vim-autoprefixer-contents*
+
+    1.About.........................|vim-autoprefixer-about|
+    2.Installation..................|vim-autoprefixer-installation|
+        2.1.Dependencies............|vim-autoprefixer-dependencies|
+            2.1.1.Node.js...........|vim-autoprefixer-node-installation|
+            2.1.2.Autoprefixer......|vim-autoprefixer-autoprefixer-installation|
+        2.2.Plug-in.................|vim-autoprefixer-plugin-installation|
+    3.Usage.........................|vim-autoprefixer-usage|
+        3.1.Quick Start.............|vim-autoprefixer-quickstart|
+        3.2.Normal Mode.............|vim-autoprefixer-normalmode|
+        3.3.Visual Mode.............|vim-autoprefixer-visualmode|
+        3.4.Set Options.............|vim-autoprefixer-options|
+    4.License.......................|vim-autoprefixer-licence|
+
+================================================================================
+1. About                                                *vim-autoprefixer-about*
+
+With vim-autoprefixer you can use the power of Autoprefixer
+(https://github.com/ai/autoprefixer) without leaving vim.
+Write your CSS and add vendor prefixes automatically using values from 
+Can I Use. Autoprefixer utilizes the most recent data from Can I Use to add 
+only necessary vendor prefixes. It also removes old, unnecessary prefixes from 
+your CSS.
+
+vim-autoprefixer plugin works in normal and visual vim mode. Select a block of 
+CSS code in visual mode hit F7 and aply prefixes on it, in normal mode the 
+plugin processes the entire file.
+
+Note that vim-autoprefixer interact with the user and prompt for Autoprefixer 
+options, if you don’t set any option and hit Enter vim-autoprefixer continue 
+with Autoprefixer default settings.
+
+================================================================================
+2. Installation                                  *vim-autoprefixer-installation*
+
+--------------------------------------------------------------------------------
+2.1 Dependencies                                 *vim-autoprefixer-dependencies*
+
+vim-autoprefixer requires node.js, npm utility and Autoprefixer intalled 
+in your system.
+
+--------------------------------------------------------------------------------
+2.1.1. Node.js Installation                 *vim-autoprefixer-node-installation*
+
+On Ubuntu you can install it with:
+
+        $ sudo add-apt-repository ppa:chris-lea/node.js
+        $ sudo apt-get update
+        $ sudo apt-get install nodejs
+
+Make sure you’ve got the very most recent release of npm:
+
+        $ sudo npm install npm -g
+
+On MacOSX you can install the binary node.js or with brew:
+
+        $ brew install node
+
+--------------------------------------------------------------------------------
+2.2.2. Autoprefixer Installation                 *vim-autoprefixer-installation*
+
+On Linux and MacOSX run in a terminal:
+
+        $ sudo npm install --global autoprefixer
+
+Test it. Open a terminal paste this code and hit enter:
+
+        $ echo '.mi{transition: transform 1s;}a{box-sizing: border-box;}' > test.css
+
+Run the test:
+
+        $ autoprefixer test.css
+
+Get help:
+
+        $ autoprefixer -h
+On Ubuntu if you get errors try:
+
+        $ sudo apt-get install nodejs-legacy
+
+--------------------------------------------------------------------------------
+2.2. Plug-in Installation                 *vim-autoprefixer-plugin-installation*
+
+You can install the plugin manually just extract the zip file and place the 
+content files in your ~/.vim subfolders.
+
+    Place in ~/.vim/plugin/vim-autoprefixer.vim 
+    and in ~/.vim/doc/vim-autoprefixer.txt
+
+or you can install it with Vundle or Pathogen
+
+================================================================================
+3. Usage                                                *vim-autoprefixer-usage*
+
+--------------------------------------------------------------------------------
+3.1 Quick Start                                    *vim-autoprefixer-quickstart*
+
+Vim Autoprefixer plugin works in normal and visual vim mode. Select a block of 
+CSS code in visual mode hit F7 and aply prefixes on it, in normal mode the 
+plugin processes the entire file.
+
+Note that vim-autoprefixer interact with the user and prompt for Autoprefixer 
+options, if you don’t set any option and hit Enter vim-autoprefixer continue 
+with Autoprefixer default settings.
+
+--------------------------------------------------------------------------------
+3.2 Normal Mode                                    *vim-autoprefixer-normalmode*
+
+                ADD VENDOR PREFIXES IN ENTIRE FILE
+
+First of all open an existing CSS file or write some from scratch:
+
+        -------------------------------
+        .myclass {
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        a {
+            display: flex;
+        }
+        ------------------------------
+
+-1- Press ESC to set vim in normal mode.
+-2- Press F7
+-3- Prefixmycss executing and waiting for options
+
+        Add vendor prefixes to CSS rules
+        Hit ENTER or you can add Autoprefixes CLI Options
+        Enter options :
+
+-4- Just press ENTER and view your buffer to change in this:
+
+        ------------------------------
+        .myclass {
+            border-radius: 5px;           <-- removed unecessary vendor prefix
+        }
+
+        a {
+            display: -webkit-box;         <--
+            display: -webkit-flex;           |- vendor prefixes added
+            display: -ms-flexbox;         <--
+            display: flex;
+        }
+        ------------------------------
+
+--------------------------------------------------------------------------------
+3.3. Visual Mode                                   *vim-autoprefixer-visualmode*
+
+                 ADD VENDOR PREFIXES IN SELECTED ITEMS
+
+Like the previus example write some CSS code:
+
+        ---------------------------
+        a {
+            box-sizing: border-box;
+        }
+
+        .myclass {
+            box-sizing: border-box;
+        }
+        ---------------------------
+
+-1- Press ESC to exit insert mode.
+-2- Press v and select the entire class 'myclass' or use your mouse.
+-3- Press F7
+-4- Hit ENTER Vendor prefixes added only in the class:
+
+        --------------------------------
+        a {
+            box-sizing: border-box;
+        }
+
+        .myclass {
+            -moz-box-sizing: border-box;
+                 box-sizing: border-box;
+        }
+        --------------------------------
+
+--------------------------------------------------------------------------------
+3.4. Set Options                                      *vim-autoprefixer-options*
+
+You can set autoprefixer CLI options in the vim prompt.
+For help about autoprefixer options type in a shell:
+
+        $ autoprefixer -h
+-1- Press F7
+-2- Add this in the prompt:
+
+        Enter options:-b "last 2 versions, > 1%"
+
+-3- Hit Enter
+
+================================================================================
+License                                               *vim-autoprefixer-license*
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Ioannis Kapoulas                 (ioannis-kapoulas@otenet.gr)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
