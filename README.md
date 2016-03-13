@@ -11,7 +11,7 @@ About
 
 With vim-autoprefixer you can use the power of Autoprefixer without leaving vim. Write your CSS and add vendor prefixes automatically using values from [Can I Use](http://caniuse.com/). Autoprefixer utilizes the most recent data from Can I Use to add only necessary vendor prefixes. It also removes old, unnecessary prefixes from your CSS.
 
-vim-autoprefixer plugin works in normal and visual vim mode. Select a block of CSS code in visual mode hit F7 and aply prefixes on it, in normal mode the plugin processes the entire file.
+vim-autoprefixer plugin works in normal and visual vim mode. Select a block of CSS code in visual mode hit F7 and apply prefixes on it, in normal mode the plugin processes the entire file.
 
 Note that vim-autoprefixer interact with the user and promt for Autoprefixer options, if you don’t set any option and hit Enter vim-aytoprefixer continue with Autoprefixer default settings.
 
